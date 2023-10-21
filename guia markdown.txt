@@ -1,0 +1,22 @@
+Ejemlo para crear Markdown
+
+# h1
+## h2
+### h3
+
+>  quote
+
+![titulos de la imagen con su ruta siguiente](/images/pico-8-code-editor.png)
+
+```
+Bloque de codigo
+```
+
+[nombre link googl ejemplo](https://google.com)
+
+* Bullet
+
+Ejemplo de tabla, seria Header el primer renglon, luego se hace la linea y se sigue otro renglon
+| Service | Purpose |
+| --- | --- |
+| S3 | File storage |

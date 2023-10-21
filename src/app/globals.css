@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  background-color: #060C1F;
+  font-family: 'Almarai', sans-serif;
+}
+
+
+.glass-box {
+    backdrop-filter: blur(19px);
+    -webkit-backdrop-filter: blur(19px);
+    background: hsla(0,0%,100%,.07);
+    border: 1px solid hsla(0,0%,100%,.18);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,.37);
+}
+
+@keyframes wave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes wave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+  
+  .bg-lines {
+    background-image: url('../../public/images/lines.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: wave 20s infinite, fade 10s infinite; /* Combina ambas animaciones */
+  }
+
+  .bg-dots-top {
+    background-image: url('../../public/images/bgdots.png');
+    background-repeat: no-repeat;
+    background-position: top right; 
+    background-repeat: no-repeat;
+  }
+
+  .bg-dots-bottom {
+    background-image: url('../../public/images/bgdots2.png');
+    background-size: content;
+    background-repeat: no-repeat;
+    background-position: bottom left; 
+    background-repeat: no-repeat;
+    bottom: 60%;
+  }
+
+  
+  .bg-curve {
+    background-image: url('../../public/images/curvelight.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+
+  }
+  
+  
+  
+  .circletopright{
+    position: fixed;
+    top: -15%;
+    right: -5%;
+    width: 500px;
+    height: 500px;
+      border-radius: 50%;  
+      filter: blur(80px);
+    background: radial-gradient(circle at 50% 50%,rgb(162, 3, 236), rgba(76, 0, 255, 0));
+    opacity: 0.5;
+    z-index: -2;
+  }
+
+  .circlebottomleft{
+    position: fixed;
+    bottom: -15%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+      border-radius: 50%;  
+      filter: blur(80px);
+    background: radial-gradient(circle at 50% 50%,rgb(162, 3, 236), rgba(76, 0, 255, 0));
+    opacity: 0.5;
+    z-index: -2;
+  }
+
+  @media (max-width: 640px) {
+    .circlebottomleft {
+      width: 300px;
+      height: 300px;
+      z-index: -1;
+    }
+    .circletopright {
+      width: 300px;
+      height: 300px;
+      z-index: -1;
+    }
+  }
+
+   
+  .container1 {
+    position: relative;
+  }
+  
+  .circle1 {
+    position: absolute;
+    width: 70px; /* Ajusta el tamaño del círculo según tus necesidades */
+    height: 70px; /* Ajusta el tamaño del círculo según tus necesidades */
+    background: radial-gradient(transparent 10%, rgb(166, 60, 250) 100%);
+    border-radius: 50%; /* Hace que el elemento sea un círculo */
+    left: -35px; /* Mueve el círculo hacia la izquierda */
+    top: 20%; /* Alinea el círculo en la parte superior del contenedor */
+    z-index: 20;
+  }
+  
+.glow-on-hover {
+  width: 180px;
+  height: 40px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #660e9c;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 25px;
+ 
+}
+
+.glow-on-hover:before {
+  content: '';
+  background: linear-gradient(45deg, #7b06bf, #7a00ff, #12e5a9, #9a13ac);
+  position: absolute;
+  top: -2px;
+  left:-2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 1; /* Cambiado a 1 para que esté siempre presente */
+  border-radius: 25px;
+}
+
+
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 25px;
+  
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+hr.custom-hr {
+  border: none; /* Elimina la línea predeterminada */
+  background-image: linear-gradient(to right, rgb(26, 12, 41), rgb(161, 7, 212));
+  height: 2px; /* Cambia '2px' al grosor que desees */
+  width: 50%; /* Define el ancho al 70% */
+  margin: 0 auto; /* Centra horizontalmente */
+  margin-bottom: 10px;
+}
+
+
