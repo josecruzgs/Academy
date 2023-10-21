@@ -11,6 +11,8 @@ export default function Home() {
   const provider = new GoogleAuthProvider();
 
   const signIn = async () => {
+    provider.setCustomParameters({ prompt: 'select_account' });
+
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
 
