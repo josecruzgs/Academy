@@ -10,12 +10,14 @@ import { getCheckoutUrl, getPortalUrl } from "../account/stripePayment";
 import { getPremiumStatus } from "../account/getPremiumStatus";
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Image from "next/image";
+import Logo from "../../../public/images/logo.png"
 
 const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
-    { name: 'Team', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: false },
+    { name: 'Courses', href: '/courses', current: true },
+    { name: 'Blog', href: '/blog', current: false },
+    { name: 'Glossary', href: '/glossary', current: false },
+    { name: 'Challenges', href: '/challenges', current: false },
 ]
 
 function classNames(...classes: any[]) {
@@ -28,7 +30,8 @@ function Navigation() {
     const userName = auth.currentUser?.displayName;
     const email = auth.currentUser?.email;
     const defaultProfilePhotoURL = '/images/avatar.png';
-    const [photoURL] = useState(auth.currentUser?.photoURL || defaultProfilePhotoURL);
+    const [photoURL, setPhotoURL] = useState(auth.currentUser?.photoURL || defaultProfilePhotoURL);
+    const [loadingProfileImage, setLoadingProfileImage] = useState(true);
 
     const router = useRouter();
     const [isPremium, setIsPremium] = useState(false);
@@ -38,8 +41,8 @@ function Navigation() {
             if (user) {
                 const photoURL = user.photoURL;
                 setIsPremium(await getPremiumStatus(app));
-                { photoURL }
-                
+                setPhotoURL(photoURL || defaultProfilePhotoURL);
+                setLoadingProfileImage(false); // Mark the image as loaded
             } else {
                 setIsPremium(false);
             }
@@ -132,7 +135,7 @@ function Navigation() {
 
     return (
 
-        <Disclosure as="nav" className="bg-gray-800">
+        <Disclosure as="nav" className="glass-box  md:mx-4 items-center justify-center">
             {({ open }) => (
                 <>
                     <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -151,21 +154,25 @@ function Navigation() {
                             </div>
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
-                                    <img
-                                        className="h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                                        alt="Your Company"
-                                    />
+                                    <a href="/">
+                                        <Image
+                                            className="inline-flex ml-8 md:ml-1 lg:ml-1 w-24 md:w-40"
+                                            src={Logo}
+                                            width={110}
+                                            height={100}
+                                            alt="Logo"
+                                        />
+                                    </a>
                                 </div>
-                                <div className="hidden sm:ml-6 sm:block">
-                                    <div className="flex space-x-4">
+                                <div className="hidden sm:block  items-stretch flex items-center my-auto mx-auto">
+                                    <div className="flex space-x-4 shrink">
                                         {navigation.map((item) => (
                                             <a
                                                 key={item.name}
                                                 href={item.href}
                                                 className={classNames(
-                                                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                                                    'rounded-md px-3 py-2 text-sm font-medium'
+                                                    item.current ? 'bg-gray-900 text-white ' : 'text-gray-300 hover:text-white',
+                                                    'rounded-md px-3 py-2 text-md font-medium'
                                                 )}
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
@@ -191,7 +198,7 @@ function Navigation() {
                                     <>
                                         <Menu as="div" className="relative ml-3">
                                             <div>
-                                                <Menu.Button className="relative flex rounded-full bg-gray-800 w-8 h-8 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                                <Menu.Button className="relative flex rounded-full w-8 h-8 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                                     <span className="absolute -inset-1.5" />
                                                     <span className="sr-only">Open user menu</span>
                                                     {photoURL && (
@@ -208,15 +215,25 @@ function Navigation() {
                                                 leaveFrom="transform opacity-100 scale-100"
                                                 leaveTo="transform opacity-0 scale-95"
                                             >
-                                                <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+
+                                                <Menu.Items className="absolute right-0 bg-gray-900 z-50 mt-5 w-80 md:w-60 origin-top-right rounded-md  py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
 
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <a
                                                                 href="#"
-                                                                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                                className={classNames(active ? 'text-gray-100 ' : '', 'block px-4 pt-2 pointer-events-none text-md lg:text-sm text-gray-300')}
                                                             >
                                                                 {userName}
+                                                            </a>
+                                                        )}
+                                                    </Menu.Item>
+                                                    <Menu.Item>
+                                                        {({ active }) => (
+                                                            <a
+                                                                href="#"
+                                                                className={classNames(active ? 'text-gray-100 ' : '', 'block px-4 pb-2 pointer-events-none text-md lg:text-xs text-gray-300')}
+                                                            >
                                                                 {email}
                                                             </a>
                                                         )}
@@ -226,7 +243,7 @@ function Navigation() {
                                                         {({ active }) => (
                                                             <a
                                                                 href="#"
-                                                                className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                                                                className={classNames(active ? 'text-purple-500 ' : '', 'block px-4 py-2 text-md lg:text-sm text-gray-300')}
                                                             >
                                                                 My Account
                                                             </a>
@@ -237,7 +254,7 @@ function Navigation() {
                                                         {({ active }) => (
                                                             <a
                                                                 onClick={signOut}
-                                                                className={classNames(active ? 'bg-gray-100 ' : '', 'block px-4 py-2  text-sm text-gray-700')}
+                                                                className={classNames(active ? 'text-purple-500 ' : '', 'block px-4 py-2  text-md lg:text-sm text-gray-300')}
                                                                 style={{ cursor: 'pointer' }}>
                                                                 Sign out
                                                             </a>

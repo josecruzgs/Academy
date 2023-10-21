@@ -23,7 +23,9 @@ export default function RootLayout({
       <link rel="icon" href="/favicon.ico" />
       <body className={inter.className}>
         <AuthRouter>
-        <Navigation/>
+          <div className="fixed w-full z-40 top-0 lg:pt-4 md:pt-2">
+        <Navigation />
+        </div>
           <div className="text-white  items-center">
             {children}
           </div>
