@@ -11,7 +11,7 @@ import { getPremiumStatus } from "../account/getPremiumStatus";
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from "next/image";
-import Logo from "../../../public/images/logo.svg"
+import Logo from "../../../public/images/Logo.svg"
 
 const navigation = [
     { name: 'Home', href: '/', current: false },
