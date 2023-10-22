@@ -109,11 +109,11 @@ function Navigation() {
     const InfoNoLogeado = (
         <button
 
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            className="text-white bg-purple-700 hover:bg-purple-800  font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 "
         >
             <a href="/login">
                 <div className="flex gap-2 items-center align-middle">
-                    Login In
+                    Academic Access
                 </div></a>
         </button>
     );
@@ -127,8 +127,10 @@ function Navigation() {
             Sign Out
         </button>
     );
-
-
+    
+    const aspectRatio = 9 / 16; // Relación de aspecto 16:9
+    const containerWidth = 100; // Ancho del contenedor en porcentaje
+    const height = (containerWidth * aspectRatio) + "vw";
     const statusPanel = isPremium ? <PremiumPanel /> : <StandardPanel />;
     const memberButton = isPremium ? managePortalButton : upgradeToPremiumButton;
 
@@ -152,7 +154,7 @@ function Navigation() {
                                     )}
                                 </Disclosure.Button>
                             </div>
-                            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                            <div className="flex flex-1 items-center justify-left sm:items-stretch sm:justify-start">
                                 <div className="flex flex-shrink-0 items-center">
                                     <a href="/">
                                         <Image
@@ -198,11 +200,11 @@ function Navigation() {
                                     <>
                                         <Menu as="div" className="relative ml-3">
                                             <div>
-                                                <Menu.Button className="relative flex rounded-full w-8 h-8 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                                <Menu.Button className="relative flex rounded-full w-8 h-8 text-sm ">
                                                     <span className="absolute -inset-1.5" />
                                                     <span className="sr-only">Open user menu</span>
                                                     {photoURL && (
-                                                        <img src={photoURL} alt="Profile Photo" className="w-8 h-8 rounded-full" />
+                                                        <img src={photoURL} alt="Profile Photo" className="w-8 h-8 rounded-full ring-2 ring-purple-500 ring-offset-2 ring-offset-gray-800" />
                                                     )}
                                                 </Menu.Button>
                                             </div>
@@ -242,7 +244,7 @@ function Navigation() {
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <a
-                                                                href="#"
+                                                                href="/account"
                                                                 className={classNames(active ? 'text-purple-500 ' : '', 'block px-4 py-2 text-md lg:text-sm text-gray-300')}
                                                             >
                                                                 My Account

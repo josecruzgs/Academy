@@ -53,8 +53,7 @@ export default function Home() {
     <>
       <div className="antialiased  pt-10 relative bg-lines mt-10 lg:mt-1 ">
 
-        <div className="circletopright"></div>
-        <div className="circlebottomleft"></div>
+        
 
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
           <a href="https://vrakka.com" target="_blank" className="inline-flex justify-between bg-black items-center py-1 px-1 pr-4 mb-7 text-sm  rounded-full  text-white  hover:bg-gray-900" role="alert">

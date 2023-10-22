@@ -23,13 +23,19 @@ export default function RootLayout({
       <link rel="icon" href="/favicon.ico" />
       <body className={inter.className}>
         <AuthRouter>
-          <div className="fixed w-full z-40 top-0 lg:pt-4 md:pt-2">
-        <Navigation />
-        </div>
-          <div className="text-white  items-center">
-            {children}
+          <div className="fixed w-full z-40 top-0 lg:pt-4 md:pt-2 ">
+            <Navigation />
           </div>
-         <Footer/>
+          <div className="bg-dots-top">
+            <div className="bg-dots-bottom">
+              <div className="circletopright"></div>
+              <div className="circlebottomleft"></div>
+              <div className="text-white  items-center">
+                {children}
+              </div>
+            </div>
+          </div>
+          <Footer />
         </AuthRouter>
       </body>
     </html>

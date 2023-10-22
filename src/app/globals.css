@@ -99,7 +99,7 @@ body {
       border-radius: 50%;  
       filter: blur(80px);
     background: radial-gradient(circle at 50% 50%,rgb(162, 3, 236), rgba(76, 0, 255, 0));
-    opacity: 0.5;
+    opacity: 0.4;
     z-index: -2;
   }
 

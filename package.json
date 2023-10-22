@@ -12,6 +12,8 @@
     "@emotion/react": "^11.11.1",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
+    "@iconify-icons/simple-icons": "^1.2.73",
+    "@iconify/react": "^4.1.1",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",

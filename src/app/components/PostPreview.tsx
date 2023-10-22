@@ -7,16 +7,18 @@ const PostPreview = (props: PostMetadata) => {
     <>
    
 
-    <div className=" duration-300  bg-primary-500 rounded-lg ">
-        <img
+    <div className=" duration-300  glass-box rounded-lg ">
+    <Link href={`/posts/${props.slug}`}>
+       <img
           src={props.image}
           className="object-cover w-full h-64 rounded-xl "
           alt=""
         />
+        </Link>
         <div className="p-5">
           <p className="mb-3 text-sm font-semibold tracking-wide uppercase">
             <a
-              href="/"
+              href="#"
               className="transition-colors duration-200 text-pink-700 "
               aria-label="Category"
               title="traveling"
