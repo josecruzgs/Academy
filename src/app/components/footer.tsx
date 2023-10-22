@@ -23,11 +23,11 @@ export default function Footer() {
                         <p className="text-left pt-4 font-semibold lg:text-2xl text-4xl text-center lg:text-left">Get in touch</p>
                         <div className='flex flex-col lg:flex-row'>
                             <a href="tel:+525587285168" target="_blank"
-                                className='bg-gray-900 py-2 px-3 mr-2 rounded text-md text-purple-400 rounded-lg mt-2'>
+                                className='bg-gray-900 py-2 px-3 mr-2 hover:text-white rounded text-md text-purple-400 rounded-full mt-2'>
                                 +52 55 8728 5168
                             </a>
                             <a href="mailto:contacto@vrakka.com" target="_blank"
-                                className='bg-gray-900 py-2 px-3  mr-2 rounded text-md text-purple-400 rounded-lg mt-2'>
+                                className='bg-gray-900 py-2 px-3  mr-2 rounded hover:text-white  text-md text-purple-400 rounded-full mt-2'>
                                 contacto@vrakka.com
                             </a>
                         </div>
@@ -42,7 +42,7 @@ export default function Footer() {
                             <SocialIcon bgColor="#060C1F" href="https://www.facebook.com" target='_blank' fgColor="white" url="www.facebook.com" />
                             <SocialIcon bgColor="#060C1F" href="https://www.youtube.com" target='_blank' fgColor="white" url="www.youtube.com" />
                         </div>
-                        <p className="text-left pt-4 items-center text-center lg:text-left lg:items-left">©2023 Vrakka. All rights reserved</p>
+                        <p className="text-left pt-4 items-center text-center lg:text-center text-sm text-slate-600 lg:items-left">©2023 Vrakka. All rights reserved</p>
                     </div>
                 </div>
             </div>

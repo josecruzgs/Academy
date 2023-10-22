@@ -12,6 +12,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from "next/image";
 import Logo from "../../../public/images/Logo.svg"
+import { NavLink } from 'react-router-dom';
 
 const navigation = [
     { name: 'Home', href: '/', current: false },
@@ -101,9 +102,9 @@ function Navigation() {
     const upgradeToPremiumButton = (
         <button
             onClick={upgradeToPremium}
-            className="bg-blue-600 p-4 px-6 text-lg rounded-lg hover:bg-blue-700 shadow-lg"
+            className="bg-purple-700 p-2 ml-3 my-2 text-white px-6 text-lg rounded-lg hover:bg-purple-600 shadow-lg"
         >
-            <div className="flex gap-2 items-center align-middle justify-center">
+            <div className="flex text-sm font-semibold items-center align-middle justify-center ">
                 Upgrade To Premium
             </div>
         </button>
@@ -112,9 +113,9 @@ function Navigation() {
     const managePortalButton = (
         <button
             onClick={manageSubscription}
-            className="bg-blue-600 p-4 px-6 text-lg rounded-lg hover:bg-blue-700 shadow-lg"
+            className=" rounded-gull pt-2 shadow-lg"
         >
-            <div className="flex gap-2 items-center align-middle justify-center">
+            <div className="flex pl-4 items-center pb-2 align-middle  text-slate-300 hover:text-white text-sm justify-center">
                 Manage Subscription
             </div>
         </button>
@@ -144,9 +145,7 @@ function Navigation() {
         </button>
     );
     
-    const aspectRatio = 9 / 16; // Relación de aspecto 16:9
-    const containerWidth = 100; // Ancho del contenedor en porcentaje
-    const height = (containerWidth * aspectRatio) + "vw";
+    
     const statusPanel = isPremium ? <PremiumPanel /> : <StandardPanel />;
     const memberButton = isPremium ? managePortalButton : upgradeToPremiumButton;
 
@@ -174,22 +173,24 @@ function Navigation() {
                                 <div className="flex flex-shrink-0 items-center">
                                     <a href="/">
                                         <Image
-                                            className="inline-flex ml-8 md:ml-1 lg:ml-1 w-24 md:w-40"
+                                            className="inline-flex ml-12 md:ml-1 lg:ml-1 w-26 md:w-40"
                                             src={Logo}
-                                            width={110}
-                                            height={100}
+                                            width={130}
+                                            height={110}
                                             alt="Logo"
                                         />
                                     </a>
                                 </div>
                                 <div className="hidden sm:block  items-stretch flex items-center my-auto mx-auto ">
-                                    <div className="flex space-x-4 shrink ">
+                                    <div className="flex space-x-4 shrink  ">
+                                        
                                         {navigation.map((item) => (
+                                            
                                             <a
                                                 key={item.name}
                                                 href={item.href}
                                                 className={classNames(
-                                                    item.current ? 'border-b border-purple-500 text-white translate-z-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-800  via-transparent to-transparent' : 'text-gray-300 hover:text-white',
+                                                    item.current ? 'border-b-2  h-12  border-purple-500 translate-y-2 text-white translate-z-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-800  via-transparent to-transparent' : 'text-gray-300  hover:text-white hover:border-b-2 h-12 translate-y-2 hover:border-purple-500',
                                                   
                                                     ' px-3 py-1 text-md font-medium '
                                                 )}
@@ -259,10 +260,14 @@ function Navigation() {
                                                     </Menu.Item>
 
                                                     <Menu.Item>
+                                                    {memberButton}
+                                                    </Menu.Item>
+
+                                                    <Menu.Item>
                                                         {({ active }) => (
                                                             <a
                                                                 href="/account"
-                                                                className={classNames(active ? 'text-purple-500 ' : '', 'block px-4 py-2 text-md lg:text-sm text-gray-300')}
+                                                                className={classNames(active ? 'text-white' : '', 'block px-4 py-2 text-md lg:text-sm text-gray-300')}
                                                             >
                                                                 My Account
                                                             </a>
@@ -273,7 +278,7 @@ function Navigation() {
                                                         {({ active }) => (
                                                             <a
                                                                 onClick={signOut}
-                                                                className={classNames(active ? 'text-purple-500 ' : '', 'block px-4 py-2  text-md lg:text-sm text-gray-300')}
+                                                                className={classNames(active ? 'text-white' : '', 'block px-4 py-2  text-md lg:text-sm text-gray-300')}
                                                                 style={{ cursor: 'pointer' }}>
                                                                 Sign out
                                                             </a>

@@ -23,12 +23,12 @@ const Blog = () => {
         <div className="pb-4 md:pb-4">
         <Breadcrumb items={breadcrumbItems} />
         </div>
-          <div className="glass-box rounded-2xl lg:flex mt-6">
+          <div className="glass-box rounded-2xl lg:flex mt-6 mx-4">
             <div className="lg:w-1/2 lg:pr-4">
               <img src="/images/blog/best2023.jpg" alt="Imagen" className="w-full h-auto lg:rounded-l-lg lg:shadow-lg" />
             </div>
-            <div className="lg:w-1/2 lg:px-4 text-left mx-auto my-auto ">
-              <h2 className="text-4xl font-semibold mb-2 lg:px-4">Next Cryptocurrency to Explode in 2023</h2>
+            <div className="lg:w-1/2 lg:px-4 text-left mx-auto my-auto p-4 ">
+              <h2 className="text-2xl lg:text-4xl font-semibold mb-2 lg:px-4">Next Cryptocurrency to Explode in 2023</h2>
               <p className="text-gray-200 lg:px-4">There is no doubt that the crypto market is growing by leaps and bounds. The most popular cryptocurrency in the world, Bitcoin, has recently started growing again alongside other cryptocurrencies.</p>
               <a href="/posts/next_crypto_2023"><button className="lg:mx-4 bg-purple-700 mt-4 px-6 py-2 rounded-md "> Read More</button></a>
               </div>

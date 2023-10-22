@@ -21,7 +21,7 @@ function CoursesSection() {
                 <div className="flex flex-col h-full items-center text-center">
                   <div className="grow mb-5 ">
                     <div className='flex justify-start'>
-                    <button className="m-4  rounded-lg px-4 py-1 bg-gradient-to-r from-primary-300 to-primary-400"> New </button>
+                    <button className="m-4 rounded-lg px-4 py-1 bg-gradient-to-b from-purple-600 to-purple-900"> New </button>
                     </div>
                   <p className="text-sm text-slate-500 mb-2">Basics of</p>
                     <h2 className="text-2xl text-slate-200  border rounded-lg py-4 mx-4 mb-12">CRYPTO WORLD</h2>
@@ -46,7 +46,7 @@ function CoursesSection() {
                 <div className="flex flex-col h-full items-center text-center">
                   <div className="grow mb-5 ">
                     <div className='flex justify-start'>
-                    <button className="m-4  rounded-lg px-4 py-1 bg-gradient-to-r from-primary-300 to-primary-400"> New </button>
+                    <button className="m-4 rounded-lg px-4 py-1 bg-gradient-to-b from-purple-600 to-purple-900"> New </button>
                     </div>
                   <p className="text-sm text-slate-500 mb-2">Basics of</p>
                     <h2 className="text-2xl text-slate-200  border rounded-lg py-4 mx-4 mb-12">BLOCKCHAIN</h2>
@@ -71,7 +71,7 @@ function CoursesSection() {
                 <div className="flex flex-col h-full items-center text-center">
                   <div className="grow mb-5 ">
                     <div className='flex justify-start'>
-                    <button className="m-4  rounded-lg px-4 py-1 bg-gradient-to-r from-primary-300 to-primary-400"> New </button>
+                    <button className="m-4 rounded-lg px-4 py-1 bg-gradient-to-b from-purple-600 to-purple-900"> New </button>
                     </div>
                   <p className="text-sm text-slate-500 mb-2">Basics of</p>
                     <h2 className="text-2xl text-slate-200  border rounded-lg py-4 mx-4 mb-12">DECENTRALIZATION</h2>
