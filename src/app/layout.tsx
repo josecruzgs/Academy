@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/images/favicon.ico" />
       <body className={inter.className}>
         <AuthRouter>
           <div className="fixed w-full z-40 top-0 lg:pt-4 md:pt-2 ">

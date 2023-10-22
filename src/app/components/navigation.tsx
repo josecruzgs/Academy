@@ -11,14 +11,30 @@ import { getPremiumStatus } from "../account/getPremiumStatus";
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from "next/image";
-import Logo from "../../../public/images/logo.png"
+import Logo from "../../../public/images/logo.svg"
 
 const navigation = [
-    { name: 'Courses', href: '/courses', current: true },
+    { name: 'Home', href: '/', current: false },
+    { name: 'Courses', href: '/courses', current: false },
     { name: 'Blog', href: '/blog', current: false },
     { name: 'Glossary', href: '/glossary', current: false },
     { name: 'Challenges', href: '/challenges', current: false },
 ]
+
+// Obtiene la URL actual
+const currentURL = window.location.pathname;
+
+// Recorre el array de navegación y actualiza la propiedad "current"
+for (let item of navigation) {
+    if (item.href === currentURL) {
+        item.current = true;
+    } else {
+        item.current = false;
+    }
+}
+
+// Ahora tu array de navegación tiene la propiedad "current" actualizada
+console.log(navigation);
 
 function classNames(...classes: any[]) {
     return classes.filter(Boolean).join(' ')
@@ -166,15 +182,16 @@ function Navigation() {
                                         />
                                     </a>
                                 </div>
-                                <div className="hidden sm:block  items-stretch flex items-center my-auto mx-auto">
-                                    <div className="flex space-x-4 shrink">
+                                <div className="hidden sm:block  items-stretch flex items-center my-auto mx-auto ">
+                                    <div className="flex space-x-4 shrink ">
                                         {navigation.map((item) => (
                                             <a
                                                 key={item.name}
                                                 href={item.href}
                                                 className={classNames(
-                                                    item.current ? 'bg-gray-900 text-white ' : 'text-gray-300 hover:text-white',
-                                                    'rounded-md px-3 py-2 text-md font-medium'
+                                                    item.current ? 'border-b border-purple-500 text-white translate-z-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-800  via-transparent to-transparent' : 'text-gray-300 hover:text-white',
+                                                  
+                                                    ' px-3 py-1 text-md font-medium '
                                                 )}
                                                 aria-current={item.current ? 'page' : undefined}
                                             >
