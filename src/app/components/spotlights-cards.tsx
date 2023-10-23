@@ -89,9 +89,9 @@ function Spotlightscards() {
             
             <div className="w-full md:basis-2/5 my-auto">
               <div className="pt-8 px-4 mx-auto max-w-screen-xl text-left lg:pt-4 lg:px-12 flex mx-auto flex-col items-center">
-              <h1 className="text-5xl md:text-5xl font-bold mb-5 text-gray-300">Everything in <span className="tracking-tight leading-none bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.indigo.100),theme(colors.sky.400),theme(colors.fuchsia.400),theme(colors.sky.400),theme(colors.indigo.100),theme(colors.indigo.400))] bg-[length:200%_auto] animate-gradient ">one place</span></h1>
+              <h1 className="text-5xl md:text-5xl font-bold mb-2 text-gray-300">Everything in <span className="tracking-tight leading-none bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.indigo.100),theme(colors.sky.400),theme(colors.fuchsia.400),theme(colors.sky.400),theme(colors.indigo.100),theme(colors.indigo.400))] bg-[length:200%_auto] animate-gradient ">one place</span></h1>
               </div>
-              <div className="pt-8 px-4 mx-auto max-w-screen-xl text-left lg:pt-4 lg:px-12 flex mx-auto flex-col items-center">
+              <div className="pt-4 px-4 mx-auto max-w-screen-xl text-left lg:pt-4 lg:px-12 flex mx-auto flex-col items-center">
               <h3 className="text-base mb-5 font-light">We have for you a wide variety of courses to make you part of this world.</h3>
               </div>
             </div>

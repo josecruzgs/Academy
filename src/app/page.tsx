@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <>
-    <div className="antialiased  relative  md:pt-20 ">
+    <div className="antialiased  relative pt-20 ">
         <div className=" mx-auto max-w-screen-xl text-center ">
      
         <div className="antialiased  relative   ">
@@ -70,7 +70,7 @@ export default function Home() {
                 <svg className="ml-2 w-10 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
               </a>
               <h1 className="text-2xl md:text-3xl font-semibold mb-4 text-gray-300">Where Innovation Meets</h1>
-              <p className="text-5xl md:text-6xl font-semibold  mb-8  bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.indigo.100),theme(colors.sky.400),theme(colors.fuchsia.400),theme(colors.sky.400),theme(colors.indigo.100),theme(colors.indigo.400))] bg-[length:200%_auto] animate-gradient">Web 3.0 Education</p>
+              <p className="text-6xl font-bold  mb-4  bg-clip-text text-transparent bg-[linear-gradient(to_right,theme(colors.indigo.400),theme(colors.indigo.100),theme(colors.sky.400),theme(colors.fuchsia.400),theme(colors.sky.400),theme(colors.indigo.100),theme(colors.indigo.400))] bg-[length:200%_auto] animate-gradient">Web 3.0 Education</p>
               <div className="md:text-left">
                 <p className="mb-2 text-white text-base font-normal lg:text-lg   ">
                   In our academy, we are not only teaching about cryptocurrencies and blockchain but also contributing to building a more inclusive and equitable future through technology. We invite you to join this mission"</p>

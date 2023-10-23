@@ -6,7 +6,7 @@ import Logosmall from "../../../public/images/logo-small.png";
 
 function Byvrakka() {
     return (
-        <section className="antialiased relative ">
+        <section className="antialiased relative pt-10 ">
 
             <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-8 ">
                 <div className="w-full mb-12">
@@ -21,7 +21,7 @@ function Byvrakka() {
                                     </div>
                                     <div className="flex flex-col h-full">
                                         <div className="grow mb-5 pt-12">
-                                            <h2 className="text-4xl font-semibold mb-4 text-center">The best investment in life is YOU.</h2>
+                                            <h2 className="text-4xl font-bold mb-4 text-center">The best investment in life is YOU.</h2>
                                             <p className="text-xl mb-5 font-light text-center">Mavie Academy was created to provide you with the necessary tools and education about the crypto world.</p>
                                         </div>
                                         <div className="flex items-end justify-end text-right">

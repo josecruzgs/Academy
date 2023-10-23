@@ -11,7 +11,6 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from "next/image";
 import Logo from "../../../public/images/Logo.svg"
-import { NavLink } from 'react-router-dom';
 
 const navigation = [
     { name: 'Home', href: '/', current: false },

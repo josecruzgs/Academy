@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 function Testimonials() {
   return (
-    <div className="min-w-screen min-h-screen  flex items-center justify-center px-5">
+    <div className="min-w-screen min-h-screen pt-10 pb-10 flex items-center justify-center px-5">
    
         <div className="w-full max-w-6xl mx-auto">
             <div className="text-center max-w-4xl mx-auto">
