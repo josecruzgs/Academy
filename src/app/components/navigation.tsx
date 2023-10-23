@@ -11,7 +11,9 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from "next/image";
 import Logo from "../../../public/images/Logo.svg"
+import DarkButton from "../components/darkbutton";
 
+import { ThemeProvider } from "next-themes"
 const navigation = [
     { name: 'Home', href: '/', current: false },
     { name: 'Courses', href: '/courses', current: false },
@@ -149,7 +151,7 @@ function Navigation() {
 
 
     return (
-
+        <ThemeProvider attribute="class">
         <Disclosure as="nav" className="glass-box  md:mx-4 items-center justify-center">
             {({ open }) => (
                 <>
@@ -199,8 +201,9 @@ function Navigation() {
                                         ))}
                                     </div>
                                 </div>
+                                
                             </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                            <div className="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0">
 
                                 {email ? (
                                     <>
@@ -214,8 +217,8 @@ function Navigation() {
                                 {/* Profile dropdown */}
                                 {email ? (
                                     <>
-                                        <Menu as="div" className="relative ml-3">
-                                            <div>
+                                        <Menu as="div" className="relative ml-3 flex">
+                                          
                                                 <Menu.Button className="relative flex rounded-full w-8 h-8 text-sm ">
                                                     <span className="absolute -inset-1.5" />
                                                     <span className="sr-only">Open user menu</span>
@@ -223,7 +226,7 @@ function Navigation() {
                                                         <img src={photoURL} alt="Profile Photo" className="w-8 h-8 rounded-full ring-2 ring-purple-500 ring-offset-2 ring-offset-gray-800" />
                                                     )}
                                                 </Menu.Button>
-                                            </div>
+                                            
                                             <Transition
                                                 as={Fragment}
                                                 enter="transition ease-out duration-100"
@@ -284,14 +287,17 @@ function Navigation() {
                                                     </Menu.Item>
                                                 </Menu.Items>
                                             </Transition>
+                                          
                                         </Menu>
                                     </>
                                 ) : (
                                     ""
                                 )}
 
-
+<DarkButton/>
                             </div>
+                           
+                            
                         </div>
                     </div>
 
@@ -316,7 +322,7 @@ function Navigation() {
                 </>
             )}
         </Disclosure>
-
+        </ThemeProvider>
 
 
     )

@@ -5,6 +5,7 @@ import AuthRouter from "./authRouter";
 import Navigation from "./components/navigation";
 import Footer from "./components/footer";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,8 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+  
+    <html  lang="en" >
       <link rel="icon" href="/images/favicon.ico" />
+
+      
       <body className={inter.className}>
         <AuthRouter>
           <div className="fixed w-full z-40 top-0 lg:pt-4 md:pt-2 ">
@@ -39,5 +43,6 @@ export default function RootLayout({
         </AuthRouter>
       </body>
     </html>
+   
   );
 }
