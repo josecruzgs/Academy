@@ -1,5 +1,4 @@
 "use client";
-
 import { useRouter } from "next/navigation";
 import { PremiumPanel } from "../account/premiumPanel";
 import { StandardPanel } from "../account/standardPanel";
@@ -173,7 +172,7 @@ function Navigation() {
                                 <div className="flex flex-shrink-0 items-center">
                                     <a href="/">
                                         <Image
-                                            className="inline-flex ml-12 md:ml-1 lg:ml-1 w-26 md:w-40"
+                                            className="inline-flex ml-8 md:ml-1 lg:ml-2 w-26 md:w-40"
                                             src={Logo}
                                             width={130}
                                             height={110}
@@ -236,13 +235,13 @@ function Navigation() {
                                                 leaveTo="transform opacity-0 scale-95"
                                             >
 
-                                                <Menu.Items className="absolute right-0 bg-gray-900 z-50 mt-5 w-80 md:w-60 origin-top-right rounded-md  py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                <Menu.Items className="absolute right-0 bg-gray-800 border border-gray-700 z-50 mt-5 w-80 md:w-60 origin-top-right rounded-md  py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
 
                                                     <Menu.Item>
                                                         {({ active }) => (
                                                             <a
                                                                 href="#"
-                                                                className={classNames(active ? 'text-gray-100 ' : '', 'block px-4 pt-2 pointer-events-none text-md lg:text-sm text-gray-300')}
+                                                                className={classNames(active ? 'text-gray-100 ' : '', 'block px-4 pt-2 pointer-events-none text-base lg:text-sm text-gray-300')}
                                                             >
                                                                 {userName}
                                                             </a>
@@ -252,7 +251,7 @@ function Navigation() {
                                                         {({ active }) => (
                                                             <a
                                                                 href="#"
-                                                                className={classNames(active ? 'text-gray-100 ' : '', 'block px-4 pb-2 pointer-events-none text-md lg:text-xs text-gray-300')}
+                                                                className={classNames(active ? 'text-gray-100 ' : '', 'block px-4 pb-2 pointer-events-none text-base lg:text-xs text-gray-300')}
                                                             >
                                                                 {email}
                                                             </a>
@@ -267,7 +266,7 @@ function Navigation() {
                                                         {({ active }) => (
                                                             <a
                                                                 href="/account"
-                                                                className={classNames(active ? 'text-white' : '', 'block px-4 py-2 text-md lg:text-sm text-gray-300')}
+                                                                className={classNames(active ? 'text-white' : '', 'block px-4 py-2 text-base lg:text-sm text-gray-300')}
                                                             >
                                                                 My Account
                                                             </a>
@@ -278,7 +277,7 @@ function Navigation() {
                                                         {({ active }) => (
                                                             <a
                                                                 onClick={signOut}
-                                                                className={classNames(active ? 'text-white' : '', 'block px-4 py-2  text-md lg:text-sm text-gray-300')}
+                                                                className={classNames(active ? 'text-white' : '', 'block px-4 py-2  text-base lg:text-sm text-gray-300')}
                                                                 style={{ cursor: 'pointer' }}>
                                                                 Sign out
                                                             </a>

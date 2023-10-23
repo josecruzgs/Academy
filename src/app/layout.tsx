@@ -26,7 +26,7 @@ export default function RootLayout({
           <div className="fixed w-full z-40 top-0 lg:pt-4 md:pt-2 ">
             <Navigation />
           </div>
-          <div className="bg-dots-top">
+          <div className="bg-dots-top ">
             <div className="bg-dots-bottom">
               <div className="circletopright"></div>
               <div className="circlebottomleft"></div>

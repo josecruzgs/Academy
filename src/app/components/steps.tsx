@@ -2,8 +2,8 @@ import React from 'react'
 
 function Steps() {
     return (
-        <section className="antialiased lg:pt-20 relative">
-            <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:pt-20 ">
+        <section className="antialiased lg:pt-4 relative">
+            <div className="py-1 px-4 mx-auto max-w-screen-xl text-center lg:pt-16 ">
                 <div className="flex grid grid-cols-1 md:grid-cols-2 gap-4 sm:flex-row flex-col">
                     <div className="md:col-span-1 col-span-2 order-last md:order-first">
                         <div className="mb-4 border rounded-xl glass-box  py-8 px-10 mx-10 container1 ">

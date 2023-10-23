@@ -24,13 +24,13 @@ function CoursesSection() {
                     <button className="m-4 rounded-lg px-4 py-1 bg-gradient-to-b from-purple-600 to-purple-900"> New </button>
                     </div>
                   <p className="text-sm text-slate-500 mb-2">Basics of</p>
-                    <h2 className="text-2xl text-slate-200  border rounded-lg py-4 mx-4 mb-12">CRYPTO WORLD</h2>
+                    <h2 className="text-2xl text-slate-200  border border-gray-600 rounded-2xl py-4 mx-4 mb-12">CRYPTO WORLD</h2>
                     <div className='mx-4'>
                     <p className="text-md text-slate-200 font-semibold mb-1 text-left">Basics of the crypto world</p>
-                    <p className="text-sm text-slate-300 text-left">We know it is difficult to understand the crypto world, we make it easy for you with guides containing key points and basic concepts.</p>
+                    <p className="text-base text-slate-300 text-left">We know it is difficult to understand the crypto world, we make it easy for you with guides containing key points and basic concepts.</p>
                     </div>
                   </div>
-                  <a className="inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border-2  border-green-900 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+                  <a className="inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border-2  border-gray-700 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
                     <span>BEGINNER</span>
                   </a>
                 </div>
@@ -49,13 +49,13 @@ function CoursesSection() {
                     <button className="m-4 rounded-lg px-4 py-1 bg-gradient-to-b from-purple-600 to-purple-900"> New </button>
                     </div>
                   <p className="text-sm text-slate-500 mb-2">Basics of</p>
-                    <h2 className="text-2xl text-slate-200  border rounded-lg py-4 mx-4 mb-12">BLOCKCHAIN</h2>
+                    <h2 className="text-2xl text-slate-200  border border-gray-600 rounded-2xl py-4 mx-4 mb-12">BLOCKCHAIN</h2>
                     <div className='mx-4'>
                     <p className="text-md text-slate-200 font-semibold mb-1 text-left">Basics of Blockchain</p>
-                    <p className="text-sm text-slate-300 text-left">We know it is difficult to understand blockchain, so we make it easy for you with guides containing key points and basic concepts.</p>
+                    <p className="text-base text-slate-300 text-left">We know it is difficult to understand blockchain, so we make it easy for you with guides containing key points and basic concepts.</p>
                     </div>
                   </div>
-                  <a className="inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border-2  border-green-900 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+                  <a className="inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border-2  border-gray-700  px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
                     <span>BEGINNER</span>
                   </a>
                 </div>
@@ -74,13 +74,13 @@ function CoursesSection() {
                     <button className="m-4 rounded-lg px-4 py-1 bg-gradient-to-b from-purple-600 to-purple-900"> New </button>
                     </div>
                   <p className="text-sm text-slate-500 mb-2">Basics of</p>
-                    <h2 className="text-2xl text-slate-200  border rounded-lg py-4 mx-4 mb-12">DECENTRALIZATION</h2>
+                    <h2 className="text-2xl text-slate-200  border border-gray-600 rounded-2xl py-4 mx-4 mb-12">DECENTRALIZATION</h2>
                     <div className='mx-4'>
                     <p className="text-md text-slate-200 font-semibold mb-1 text-left">Basics of decentralization</p>
-                    <p className="text-sm text-slate-300 text-left">We know that it is difficult to understand decentralization, we make it easy for you with guides containing key points and basic concepts.</p>
+                    <p className="text-base text-slate-300 text-left">We know that it is difficult to understand decentralization, we make it easy for you with guides containing key points and basic concepts.</p>
                     </div>
                   </div>
-                  <a className="inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border-2  border-green-900 px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
+                  <a className="inline-flex justify-center items-center whitespace-nowrap rounded-lg bg-slate-800 hover:bg-slate-900 border-2  border-gray-700  px-3 py-1.5 text-sm font-medium text-slate-300 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150" href="#0">
                     <span>BEGINNER</span>
                   </a>
                 </div>

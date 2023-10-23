@@ -18,37 +18,11 @@ body {
     box-shadow: 0 8px 32px 0 rgba(31,38,135,.37);
 }
 
-@keyframes wave {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  @keyframes wave {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
-
-  
+ 
   .bg-lines {
     background-image: url('../../public/images/lines.png');
     background-size: cover;
     background-repeat: no-repeat;
-    animation: wave 20s infinite, fade 10s infinite; /* Combina ambas animaciones */
   }
 
   .bg-dots-top {

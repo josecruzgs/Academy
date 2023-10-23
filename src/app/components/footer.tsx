@@ -1,10 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import Logo from "../../../public/images/logo.png"
-import { SocialIcon } from 'react-social-icons'
-import 'react-social-icons/facebook'
-import 'react-social-icons/instagram'
-import 'react-social-icons/youtube'
+import { FaTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
+import { FaDiscord } from "react-icons/fa6";
+import { FaTelegram } from "react-icons/fa6";
+import { FaTiktok } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa6";
 
 export default function Footer() {
     return (
@@ -32,18 +35,19 @@ export default function Footer() {
                             </a>
                         </div>
                     </div>
-                    <div className="w-full lg:w-1/3 h-full max-w-fit pb-4 lg:flex lg:flex-col  ">
-                        <div className="flex">
-                            <SocialIcon bgColor="#060C1F" href="https://www.instagram.com" target='_blank' fgColor="white" url="www.instagram.com" />
-                            <SocialIcon bgColor="#060C1F" href="https://www.twitter.com" target='_blank' fgColor="white" url="www.twitter.com" />
-                            <SocialIcon bgColor="#060C1F" href="https://www.discord.com" target='_blank' fgColor="white" url="www.discord.com" />
-                            <SocialIcon bgColor="#060C1F" href="https://www.telegram.com" target='_blank' fgColor="white" url="www.telegram.com" />
-                            <SocialIcon bgColor="#060C1F" href="https://www.tiktok.com" target='_blank' fgColor="white" url="www.tiktok.com" />
-                            <SocialIcon bgColor="#060C1F" href="https://www.facebook.com" target='_blank' fgColor="white" url="www.facebook.com" />
-                            <SocialIcon bgColor="#060C1F" href="https://www.youtube.com" target='_blank' fgColor="white" url="www.youtube.com" />
-                        </div>
-                        <p className="text-left pt-4 items-center text-center lg:text-center text-sm text-slate-600 lg:items-left">©2023 Vrakka. All rights reserved</p>
-                    </div>
+                    <div className="w-full lg:w-1/3 h-full  items-center justify-center text-center pb-4 lg:flex lg:flex-col">
+  <div className="flex text-center items-center justify-center mx-auto"> 
+    <a href='https://twitter.com' target='_blank'><FaTwitter className="mr-4 w-6 h-6 hover:text-purple-500"/></a>
+    <a href='https://twitter.com' target='_blank'><FaInstagram className="mr-4 w-6 h-6 hover:text-purple-500"/></a>
+    <a href='https://twitter.com' target='_blank'><FaDiscord className="mr-4 w-6 h-6 hover:text-purple-500"/></a>
+    <a href='https://twitter.com' target='_blank'><FaTelegram className="mr-4 w-6 h-6 hover:text-purple-500"/></a>
+    <a href='https://twitter.com' target='_blank'><FaTiktok className="mr-4 w-6 h-6 hover:text-purple-500"/></a>
+    <a href='https://twitter.com' target='_blank'><FaFacebook className="mr-4 w-6 h-6 hover:text-purple-500"/></a>
+    <a href='https://twitter.com' target='_blank'><FaYoutube className="mr-4 w-6 h-6 hover:text-purple-500"/></a>
+  </div>
+  <p className="text-left pt-4 items-center text-center text-base text-slate-600 -ml-4">©2023 Vrakka. All rights reserved</p>
+</div>
+
                 </div>
             </div>
         </section>

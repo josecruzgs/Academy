@@ -6,12 +6,12 @@ import Image from 'next/image'
 
 function Testimonials() {
   return (
-    <div className="min-w-screen min-h-screen  flex items-center justify-center py-5 px-5">
+    <div className="min-w-screen min-h-screen  flex items-center justify-center px-5">
    
         <div className="w-full max-w-6xl mx-auto">
             <div className="text-center max-w-4xl mx-auto">
                 <h1 className="text-5xl md:text-5xl font-bold mb-5 text-gray-300">What our Acamedics are saying.</h1>
-                <h3 className="text-xl mb-5 font-light">Our purpose is to provide you with the basic knowledge to understand the new technologies and their benefits.</h3>
+                <h3 className="text-base mb-5 font-light">Our purpose is to provide you with the basic knowledge to understand the new technologies and their benefits.</h3>
                 <div className="text-center mb-10">
                     <span className="inline-block w-1 h-1 rounded-full bg-purple-500 ml-1"></span>
                     <span className="inline-block w-3 h-1 rounded-full bg-purple-500 ml-1"></span>
@@ -32,7 +32,7 @@ function Testimonials() {
                             </div>
                         </div>
                         <div className="w-full">
-                            <p className="text-sm text-white leading-tight"><span className="text-lg leading-none italic font-bold text-purple-400 mr-1">"</span> I have always understood a little about this topic but with the Vrakka academy it was much better to understand certain topics<span className="text-lg leading-none italic font-bold text-purple-400 ml-1">"</span></p>
+                            <p className="text-base text-white leading-tight"><span className="text-lg leading-none italic font-bold text-purple-400 mr-1">"</span> I have always understood a little about this topic but with the Vrakka academy it was much better to understand certain topics<span className="text-lg leading-none italic font-bold text-purple-400 ml-1">"</span></p>
                         </div>
                     </div>
                    
@@ -48,7 +48,7 @@ function Testimonials() {
                             </div>
                         </div>
                         <div className="w-full">
-                            <p className="text-sm text-white leading-tight"><span className="text-lg leading-none italic font-bold text-purple-400 mr-1">"</span> Now I have more knowledge about blockchain, and I can understand all the concepts!<span className="text-lg leading-none italic font-bold text-purple-400 ml-1">"</span></p>
+                            <p className="text-base text-white leading-tight"><span className="text-lg leading-none italic font-bold text-purple-400 mr-1">"</span> Now I have more knowledge about blockchain, and I can understand all the concepts!<span className="text-lg leading-none italic font-bold text-purple-400 ml-1">"</span></p>
                         </div>
                     </div>
                    
@@ -66,7 +66,7 @@ function Testimonials() {
                             </div>
                         </div>
                         <div className="w-full">
-                            <p className="text-sm text-white leading-tight"><span className="text-lg leading-none italic font-bold text-purple-400 mr-1">"</span> I have always understood a little about this topic but with the Vrakka academy it was much better to understand certain topics<span className="text-lg leading-none italic font-bold text-purple-400 ml-1">"</span></p>
+                            <p className="text-base text-white leading-tight"><span className="text-lg leading-none italic font-bold text-purple-400 mr-1">"</span> I have always understood a little about this topic but with the Vrakka academy it was much better to understand certain topics<span className="text-lg leading-none italic font-bold text-purple-400 ml-1">"</span></p>
                         </div>
                     </div>
                 </div>
