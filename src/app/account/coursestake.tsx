@@ -5,11 +5,11 @@ function CoursesTake() {
         <>
 
 
-            <div className="bg-slate-200 dark:bg-slate-800 relative shadow-xl sm:rounded-lg overflow-hidden border border-gray-100 dark:border-gray-600">
+            <div className="bg-slate-800 relative shadow-xl sm:rounded-lg overflow-hidden border border-gray-700">
 
                 <div className="overflow-x-auto">
                     <table className="w-full text-sm text-left text-gray-400">
-                        <thead className="text-xs uppercase bg-slate-300 dark:bg-slate-900 text-gray-700 dark:text-gray-400">
+                        <thead className="text-xs uppercase bg-slate-900 text-gray-400">
                             <tr>
                                 <th scope="col" className="px-4 py-3">Course</th>
                                 <th scope="col" className="px-4 py-3">Category</th>
@@ -20,7 +20,7 @@ function CoursesTake() {
                             </tr>
                         </thead>
                         <tbody className="">
-                            <tr className="border-b dark:border-gray-700 border-gray-400 text-slate-700 dark:text-slate-200  hover:bg-gray-300 dark:bg-slate-800">
+                            <tr className=" border-b border-gray-700 text-slate-200 hover:bg-gray-700 bg-slate-800">
                                 <th scope="row" className="px-4 py-3 font-medium  whitespace-nowrap ">Blockchain for Business</th>
                                 <td className="px-4 py-3">Blockchain</td>
                                 <td className="px-4 py-3">Intermediate</td>
@@ -39,7 +39,7 @@ function CoursesTake() {
                                 </td>
                                
                             </tr>
-                            <tr className="border-b dark:border-gray-700 border-gray-400 text-slate-700 dark:text-slate-200  hover:bg-gray-300 dark:bg-slate-800">
+                            <tr className="border-b border-gray-700 text-slate-200 hover:bg-gray-700 bg-slate-800">
                                 <th scope="row" className="px-4 py-3 font-medium  whitespace-nowrap ">Reinforcement Learning in Trading</th>
                                 <td className="px-4 py-3">Trading</td>
                                 <td className="px-4 py-3">Advanced</td>
@@ -58,7 +58,7 @@ function CoursesTake() {
                                 </td>
                                
                             </tr>
-                            <tr className="border-b dark:border-gray-700 border-gray-400 text-slate-700 dark:text-slate-200  hover:bg-gray-300 dark:bg-slate-800">
+                            <tr className="border-b border-gray-700 text-slate-200 hover:bg-gray-700 bg-slate-800">
                                 <th scope="row" className="px-4 py-3 font-medium  whitespace-nowrap ">Optimizing Gas Costs</th>
                                 <td className="px-4 py-3">Blockchain</td>
                                 <td className="px-4 py-3">Intermediate</td>
@@ -77,7 +77,7 @@ function CoursesTake() {
                                 </td>
                                
                             </tr>
-                            <tr className="border-b dark:border-gray-700 border-gray-400 text-slate-700 dark:text-slate-200  hover:bg-gray-300 dark:bg-slate-800">
+                            <tr className="border-b border-gray-700 text-slate-200 hover:bg-gray-700 bg-slate-800">
                                 <th scope="row" className="px-4 py-3 font-medium  whitespace-nowrap ">NFTs: An Advanced Guide</th>
                                 <td className="px-4 py-3">NFTs</td>
                                 <td className="px-4 py-3">Advanced</td>
@@ -96,7 +96,7 @@ function CoursesTake() {
                                 </td>
                                
                             </tr>
-                            <tr className="border-b dark:border-gray-700 border-gray-400 text-slate-700 dark:text-slate-200 hover:bg-gray-300 dark:bg-slate-800">
+                            <tr className="border-b border-gray-700 text-slate-200 hover:bg-gray-700 bg-slate-800">
                                 <th scope="row" className="px-4 py-3 font-medium  whitespace-nowrap ">Alfabetización de IA</th>
                                 <td className="px-4 py-3">AI</td>
                                 <td className="px-4 py-3">Basic</td>
@@ -119,16 +119,16 @@ function CoursesTake() {
                         </tbody>
                     </table>
                 </div>
-                <nav className="flex flex-col md:flex-row justify-between bg-slate-300 dark:bg-gray-900 dark:text-slate-200  items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
-                    <span className="text-sm font-normal text-slate-700 dark:text-gray-400">
+                <nav className="flex flex-col md:flex-row justify-between bg-gray-900 text-slate-200 items-start md:items-center space-y-3 md:space-y-0 p-4" aria-label="Table navigation">
+                    <span className="text-sm font-normal text-gray-400">
                         Showing
-                        <span className="font-semibold text-slate-700 text-white mx-2">1-5</span>
+                        <span className="font-semibold text-white mx-2">1-5</span>
                         of
-                        <span className="font-semibold text-slate-700 text-white mx-2">12</span>
+                        <span className="font-semibold text-white mx-2">12</span>
                     </span>
                     <ul className="inline-flex items-stretch -space-x-px">
                         <li>
-                            <a href="#" className="flex items-center justify-center h-full py-1.5 px-3 ml-0 rounded-l-lg border bg-slate-200 border-gray-400 dark:bg-gray-800 dark:border-gray-700 text-gray-400 hover:bg-gray-300 hover:text-slate-500 dark:hover:bg-gray-700 dark:hover:text-white">
+                            <a href="#" className="flex items-center justify-center h-full py-1.5 px-3 ml-0 rounded-l-lg border  bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white">
                                 <span className="sr-only">Previous</span>
                                 <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
@@ -136,10 +136,10 @@ function CoursesTake() {
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="flex items-center justify-center h-full py-1.5 px-3 ml-0 border  bg-gray-800 bg-slate-200 border-gray-400 dark:bg-gray-800 dark:border-gray-700 text-gray-400 hover:bg-gray-300 hover:text-slate-500 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
+                            <a href="#" className="flex items-center justify-center h-full py-1.5 px-3 ml-0 border  bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white">1</a>
                         </li>
                         <li>
-                            <a href="#" className="flex items-center justify-center h-full py-1.5 px-3 ml-0 rounded-r-lg border  bg-slate-200 border-gray-400 dark:bg-gray-800 dark:border-gray-700 text-gray-400 hover:bg-gray-300 hover:text-slate-500 dark:hover:bg-gray-700 dark:hover:text-white">
+                            <a href="#" className="flex items-center justify-center h-full py-1.5 px-3 ml-0 rounded-r-lg border  bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white">
                                 <span className="sr-only">Next</span>
                                 <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />

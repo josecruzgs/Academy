@@ -1,9 +1,6 @@
 import { StarIcon } from "@heroicons/react/24/outline";
 
 export const PremiumPanel = () => {
-  const premiumStatusIcon = (
-    <StarIcon className="h-5 w-5 text-slate-100" />
-  );
 
   const premiumStatusPanel = (
     <div  className="glow-on-hover  pt-2">

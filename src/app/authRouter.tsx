@@ -5,7 +5,7 @@ import { initFirebase } from "@/firebase";
 import { User, getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-const HOME_ROUTE = "/";
+const HOME_ROUTE = "/login";
 const ACCOUNT_ROUTE = "/account";
 
 const AuthRouter = (props: any) => {

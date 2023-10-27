@@ -13,8 +13,7 @@ import { BsBookmarkCheckFill } from "react-icons/bs";
 import Breadcrumb from "../components/breadcrum";
 import CoursesTake from "./coursestake";
 import Quiztable from "./quiztable";
-import DarkButton from "../components/darkbutton";
-
+import Profilepic from "../components/profilepic";
 
 const breadcrumbItems = [
   { href: "/", text: "Home" },
@@ -96,38 +95,13 @@ export default function AccountPage() {
   const managePortalButton = (
     <button
       onClick={manageSubscription}
-      className="bg-slate-200 dark:bg-slate-700 border border-gray-300 rounded-full dark:border-slate-500 shadow-lg"
+      className=" rounded-gull py-2 border rounded-full border-gray-600 shadow-lg px-4"
     >
-      <div className="flex pl-4 items-center py-2 px-6 align-middle text-slate-800 dark:text-white  hover:text-white text-sm justify-center">
+      <div className="flex  items-center align-middle  text-slate-300 hover:text-white text-sm justify-center">
         Manage Subscription
       </div>
     </button>
   );
-
-
-
-  const InfoNoLogeado = (
-    <button
-
-      className="text-white bg-purple-700 hover:bg-purple-800  font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 "
-    >
-      <a href="/login">
-        <div className="flex gap-2 items-center align-middle">
-          Academic Access
-        </div></a>
-    </button>
-  );
-
-  const InfoLogeado = (
-    <button
-      onClick={signOut}
-      type="button"
-      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-    >
-      Sign Out
-    </button>
-  );
-
 
   const statusPanel = isPremium ? <PremiumPanel /> : <StandardPanel />;
   const memberButton = isPremium ? managePortalButton : upgradeToPremiumButton;
@@ -138,39 +112,33 @@ export default function AccountPage() {
     // { href: "/categoria/subcategoria/mipagina", text: "Mi Página" },
   ];
 
- 
 
   return (
-   
     <>
-    
-      <div className="antialiased pt-10 relative mt-10 lg:mt-10">
+      <div className="antialiased pt-10 relative mt-10 lg:mt-10 ">
         <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-          <h1 className="text-5xl md:text-5xl font-bold mb-5 text-left text-gray-700 dark:text-gray-300 pb-4 md:pb-1">My Account</h1>
+          <h1 className="text-5xl md:text-5xl font-bold mb-5 text-left text-gray-300 pb-4 md:pb-1">My Account</h1>
           <div className="pb-4 md:pb-4">
             <Breadcrumb items={breadcrumbItems} />
-            
           </div>
-          <div className="p-4 bg-slate-300 dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-gray-600">
+          <div className="p-4 glass-box rounded-2xl">
             <div className="flex flex-col sm:flex-row gap-4">
 
               <div className="w-full md:w-1/3 ">
-                <div id="left" className="h-full mx-auto my-auto border border-gray-100 dark:border-gray-600 py-8 items-center my-auto text-center shadow-xl bg-slate-200  dark:bg-gray-900 rounded-lg">
-                  <div className="justify-center flex">
-                    {photoURL && (
-                      <img src={photoURL} alt="Profile Photo" className="w-24 h-24 rounded-full border-2" />
-                    )}
+                <div id="left" className="h-full bg-dots-top mx-auto my-auto  py-8 items-center my-auto text-center border border-slate-800 shadow-xl bg-gray-900 rounded-lg">
+                  <div className="justify-center items-center mx-auto flex w-24 h-24 ">
+                   <Profilepic/>
                   </div>
-                  <div className="font-semibold text-gray-700 dark:text-gray-200 text-xl pt-4">
+                  <div className="font-semibold text-xl pt-4">
                     {userName}
                   </div>
-                  <div className="text-gray-700 dark:text-gray-200">
+                  <div>
                     {email}
                   </div>
-                  <div className="mx-auto text-gray-700 dark:text-gray-200  justify-center flex py-6">
+                  <div className="mx-auto justify-center flex py-6">
                     {statusPanel}
                   </div>
-                  <div className="mx-auto text-gray-700 dark:text-gray-200 justify-center flex ">
+                  <div className="mx-auto justify-center flex py-6">
                     {memberButton}
                   </div>
                  
@@ -183,27 +151,27 @@ export default function AccountPage() {
 
                 <div className="md:flex mb-4 gap-x-4 gap-y-4">
 
-                  <div id="col1" className="basis-1/2 border border-gray-100 dark:border-gray-600 flex rounded-lg flex mb-4 shadow-xl md:mb-0 items-center md:basis-1/4 p-4 bg-slate-200 dark:bg-gray-900 ">
-                    <FaBookReader className="h-10 w-10 mx-auto text-slate-400 dark:text-slate-700" />
+                  <div id="col1" className="basis-1/2 flex rounded-lg flex mb-4 border border-slate-800 shadow-xl md:mb-0 items-center md:basis-1/4 p-4 bg-gray-900 ">
+                    <FaBookReader className="h-10 w-10 mx-auto text-purple-500" />
                     <div className="text-right mx-auto">
-                      <p className="mb-2 text-sm  font-medium text-gray-500 dark:text-gray-400">Courses taken</p>
+                      <p className="mb-2 text-sm  font-medium text-gray-400">Courses taken</p>
                       <p className="text-lg font-semibold  text-xl text-purple-500">12</p>
                     </div>
                   </div>
 
-                  <div id="col3" className="basis-1/2 dlex rounded-lg border border-gray-100 dark:border-gray-600 flex mb-4 md:mb-0 shadow-xl items-center md:basis-1/4 p-4 bg-slate-200 dark:bg-gray-900">
-                    <GiReceiveMoney className="h-10 w-10 mx-auto text-slate-400 dark:text-slate-700" />
+                  <div id="col3" className="basis-1/2 dlex rounded-lg flex mb-4 md:mb-0 shadow-xl border border-slate-800 items-center md:basis-1/4 p-4 bg-gray-900 ">
+                    <GiReceiveMoney className="h-10 w-10 mx-auto text-green-500" />
                     <div className="text-right mx-auto">
-                      <p className="mb-2 text-sm  font-medium text-gray-500 dark:text-gray-400">VKRs Owned</p>
+                      <p className="mb-2 text-sm  font-medium text-gray-400">VKRs Owned</p>
                       <p className="text-lg font-semibold  text-xl text-green-500">2256<span className="text-xs pl-2">VRK</span></p>
                     </div>
                   </div>
 
-                  <div id="col3" className="w-full rounded-lg flex mb-4 border border-gray-100 dark:border-gray-600 md:mb-0 items-center shadow-xl md:basis-1/2 p-4 bg-slate-200 dark:bg-gray-900">
-                    <BsBookmarkCheckFill className="h-10 w-10 mx-auto text-slate-400 dark:text-slate-700" />
+                  <div id="col3" className="w-full rounded-lg flex mb-4 md:mb-0 items-center shadow-xl border border-slate-800 md:basis-1/2 p-4 bg-gray-900 ">
+                    <BsBookmarkCheckFill className="h-10 w-10 mx-auto text-orange-400" />
                     <div className="text-right mx-auto">
-                      <p className="mb-2 text-sm  font-medium text-gray-500 dark:text-gray-400">Education topics with best performance</p>
-                      <p className="text-lg font-semibold  text-xl text-gray-700 dark:text-gray-200">Blockchain / NFTs</p>
+                      <p className="mb-2 text-sm  font-medium text-gray-400">Education topics with best performance</p>
+                      <p className="text-lg font-semibold  text-xl text-gray-200">Blockchain / NFTs</p>
                     </div>
                   </div>
 
@@ -226,8 +194,6 @@ export default function AccountPage() {
           </div>
         </div>
       </div>
-     
     </>
-    
   );
 }

@@ -12,6 +12,7 @@ import { FcAbout } from "react-icons/fc";
 export default function Login() {
 
 
+
   const [error, setError] = useState("");
   const [showErrorPopup, setShowErrorPopup] = useState(false);
 
@@ -105,11 +106,16 @@ export default function Login() {
                   <form className="space-y-4 md:space-y-6" onSubmit={signIn}>
                     <div>
                       <label className="block mb-2 text-sm font-medium text-white">Your email</label>
-                      <input type="email"
-                        placeholder="Enter your email"
+                      <input
+                        type="email"
+                        placeholder="Your email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)} className="border sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" />
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="border sm:text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                        autoComplete="email" // Agrega esta línea
+                      />
                     </div>
+
                     <div>
                       <label className="block mb-2 text-sm font-medium text-white">Password</label>
                       <input type="password"
@@ -127,7 +133,7 @@ export default function Login() {
                         Forgot password?
                       </a>
                     </div>
-                    <button type="submit" className="w-full text-white  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-purple-600 hover:bg-primary-700 focus:ring-gray-800">Sign in</button>
+                    <button type="submit" className="w-full text-white  focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-purple-600 hover:bg-purple-700 focus:ring-gray-800">Sign in</button>
                     <p className="text-sm font-light text-gray-400  flex justify-center items-center m-auto ">
                       Don’t have an account yet? <a href="#" onClick={handleSignUpClick} className="font-medium  hover:underline text-purple-500 pl-2"> Sign up</a>
                     </p>

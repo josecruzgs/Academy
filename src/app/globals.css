@@ -28,8 +28,15 @@ body {
   .bg-dots-top {
     background-image: url('../../public/images/bgdots.png');
     background-repeat: no-repeat;
-    background-position: top right; 
+    background-position: top right;
+    background-size: content; 
+  }
+  
+  .bg-dots-top-content {
+    background-image: url('../../public/images/bgdots.png');
     background-repeat: no-repeat;
+    background-position: top right; 
+    background-size:initial;
   }
 
   .bg-dots-bottom {
@@ -37,7 +44,6 @@ body {
     background-size: content;
     background-repeat: no-repeat;
     background-position: bottom left; 
-    background-repeat: no-repeat;
     bottom: 60%;
   }
 
@@ -61,7 +67,6 @@ body {
       filter: blur(80px);
     background: radial-gradient(circle at 50% 50%,rgb(162, 3, 236), rgba(76, 0, 255, 0));
     opacity: 0.5;
-    z-index: -2;
   }
 
   .circlebottomleft{
@@ -74,7 +79,6 @@ body {
       filter: blur(80px);
     background: radial-gradient(circle at 50% 50%,rgb(162, 3, 236), rgba(76, 0, 255, 0));
     opacity: 0.4;
-    z-index: -2;
   }
 
   @media (max-width: 640px) {

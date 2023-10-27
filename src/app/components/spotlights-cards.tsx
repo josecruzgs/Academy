@@ -11,7 +11,7 @@ function Spotlightscards() {
   return (
 
     <section className="antialiased   md:pt-4 relative justify-center mb-10 ">
-      <div className="relative mx-6 z-20 overflow-hidden py-8  md:mx-auto max-w-screen-xl text-center  justify-center lg:py-16 lg:px-12 border md:border-purple-800 border-primary-100 rounded-3xl">
+      <div className="relative mx-6 z-10 overflow-hidden py-8  md:mx-auto max-w-screen-xl text-center  justify-center lg:py-16 lg:px-12 border md:border-purple-800 border-primary-100 rounded-3xl">
         <div className="absolute px-6 bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 pointer-events-none -z-10 w-1/2 aspect-square" aria-hidden="true">
           <div className="absolute inset-0 translate-z-0 bg-primary-200 rounded-full blur-[90px]"></div>
         </div>

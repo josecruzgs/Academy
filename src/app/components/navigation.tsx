@@ -1,157 +1,80 @@
 "use client";
-import { useRouter } from "next/navigation";
-import { PremiumPanel } from "../account/premiumPanel";
-import { StandardPanel } from "../account/standardPanel";
-import { Fragment, useEffect, useState } from "react";
-import { initFirebase } from "@/firebase";
-import { getAuth } from "firebase/auth";
-import { getCheckoutUrl, getPortalUrl } from "../account/stripePayment";
-import { getPremiumStatus } from "../account/getPremiumStatus";
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from "next/image";
-import Logo from "../../../public/images/Logo.svg"
-import DarkButton from "../components/darkbutton";
+import React, { useState, useEffect } from 'react';
+import { Disclosure } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Image from 'next/image';
+import Logo from '../../../public/images/Logo.svg';
+import { initFirebase } from '@/firebase';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import Usertype from './usertype';
+import Userbutton from './userbutton';
+import MobileLogo from "../../../public/images/logo_mobile.svg"
 
-import { ThemeProvider } from "next-themes"
-const navigation = [
-    { name: 'Home', href: '/', current: false },
-    { name: 'Courses', href: '/courses', current: false },
-    { name: 'Blog', href: '/blog', current: false },
-    { name: 'Glossary', href: '/glossary', current: false },
-    { name: 'Challenges', href: '/challenges', current: false },
-]
 
-// Obtiene la URL actual
-const currentURL = window.location.pathname;
 
-// Recorre el array de navegación y actualiza la propiedad "current"
-for (let item of navigation) {
-    if (item.href === currentURL) {
-        item.current = true;
-    } else {
-        item.current = false;
-    }
-}
-
-// Ahora tu array de navegación tiene la propiedad "current" actualizada
-console.log(navigation);
-
-function classNames(...classes: any[]) {
-    return classes.filter(Boolean).join(' ')
-}
 
 function Navigation() {
+    const [navigation, setNavigation] = useState([
+        { name: 'Home', href: '/', current: false },
+        { name: 'Courses', href: '/courses', current: false },
+        { name: 'Blog', href: '/blog', current: false },
+        { name: 'Glossary', href: '/glossary', current: false },
+        { name: 'Challenges', href: '/challenges', current: false },
+    ]);
+
     const app = initFirebase();
     const auth = getAuth(app);
-    const userName = auth.currentUser?.displayName;
-    const email = auth.currentUser?.email;
-    const defaultProfilePhotoURL = '/images/avatar.png';
-    const [photoURL, setPhotoURL] = useState(auth.currentUser?.photoURL || defaultProfilePhotoURL);
-    const [loadingProfileImage, setLoadingProfileImage] = useState(true);
-
-    const router = useRouter();
-    const [isPremium, setIsPremium] = useState(false);
+    const [email, setEmail] = useState<string | null>(null);
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(async (user) => {
+        const currentPath = window.location.pathname;
+
+        const updatedNavigation = navigation.map((item) => {
+            return {
+                ...item,
+                current: item.href === currentPath,
+            };
+        });
+
+        // Actualiza el estado de 'navigation' con los elementos actualizados.
+        setNavigation(updatedNavigation);
+    }, []);
+
+
+function classNames(...classes: string[]) {
+    return classes.filter(Boolean).join(' ');
+}
+
+
+
+    useEffect(() => {
+        // Suscribirse a los cambios de autenticación con Firebase
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-                const photoURL = user.photoURL;
-                setIsPremium(await getPremiumStatus(app));
-                setPhotoURL(photoURL || defaultProfilePhotoURL);
-                setLoadingProfileImage(false); // Mark the image as loaded
+                setEmail(user.email);
             } else {
-                setIsPremium(false);
+                setEmail(null);
             }
         });
 
-        return () => {
-            unsubscribe();
-        };
-    }, [app, auth]);
+        // Devuelve una función de limpieza para cancelar la suscripción cuando el componente se desmonte
+        return () => unsubscribe();
+    }, [auth]);
 
-
-    useEffect(() => {
-        const checkPremium = async () => {
-            const newPremiumStatus = auth.currentUser
-                ? await getPremiumStatus(app)
-                : false;
-            setIsPremium(newPremiumStatus);
-        };
-        checkPremium();
-    }, [app, auth.currentUser?.uid]);
-
-    const upgradeToPremium = async () => {
-        const priceId = "price_1O2JRlKwnCNgrsJqB6SrWWS9";
-        const checkoutUrl = await getCheckoutUrl(app, priceId);
-        router.push(checkoutUrl);
-        console.log("Upgrade to Premium");
-    };
-
-    const manageSubscription = async () => {
-        const portalUrl = await getPortalUrl(app);
-        router.push(portalUrl);
-        console.log("Manage Subscription");
-    };
-
-    const signOut = () => {
-        auth.signOut();
-        router.push("/");
-    };
-
-    const upgradeToPremiumButton = (
-        <button
-            onClick={upgradeToPremium}
-            className="bg-purple-700 p-2 ml-3 my-2 text-white px-6 text-lg rounded-lg hover:bg-purple-600 shadow-lg"
-        >
-            <div className="flex text-sm font-semibold items-center align-middle justify-center ">
-                Upgrade To Premium
-            </div>
-        </button>
-    );
-
-    const managePortalButton = (
-        <button
-            onClick={manageSubscription}
-            className=" rounded-gull pt-2 shadow-lg"
-        >
-            <div className="flex pl-4 items-center pb-2 align-middle  text-slate-300 hover:text-white text-sm justify-center">
-                Manage Subscription
-            </div>
-        </button>
-    );
-
-
-
-    const InfoNoLogeado = (
-        <button
-
-            className="text-white bg-purple-700 hover:bg-purple-800  font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 "
-        >
+    const AcademyAccess = (
+        <button className="text-white bg-purple-700 hover-bg-purple-800 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">
             <a href="/login">
-                <div className="flex gap-2 items-center align-middle">
-                    Academic Access
-                </div></a>
+                <div className="flex gap-2 items-center align-middle">Academic Access</div>
+            </a>
         </button>
     );
 
-    const InfoLogeado = (
-        <button
-            onClick={signOut}
-            type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-            Sign Out
-        </button>
-    );
     
-    
-    const statusPanel = isPremium ? <PremiumPanel /> : <StandardPanel />;
-    const memberButton = isPremium ? managePortalButton : upgradeToPremiumButton;
-
+    const isMobile = window.innerWidth < 768;
+    const BotonUsuario = email ? <Userbutton /> : AcademyAccess;
+    const Membresia = email ? <Usertype /> : "";
 
     return (
-        <ThemeProvider attribute="class">
         <Disclosure as="nav" className="glass-box  md:mx-4 items-center justify-center">
             {({ open }) => (
                 <>
@@ -173,25 +96,23 @@ function Navigation() {
                                 <div className="flex flex-shrink-0 items-center">
                                     <a href="/">
                                         <Image
-                                            className="inline-flex ml-8 md:ml-1 lg:ml-2 w-26 md:w-40"
-                                            src={Logo}
-                                            width={130}
-                                            height={110}
+                                            className="inline-flex ml-12 md:ml-1 lg:ml-2 w-26 md:w-40"
+                                            src={isMobile ? MobileLogo : Logo}
+                                            width={isMobile ?  50 : 130}
+                                            height={isMobile ?  50 : 90}
                                             alt="Logo"
                                         />
                                     </a>
                                 </div>
                                 <div className="hidden sm:block  items-stretch flex items-center my-auto mx-auto ">
                                     <div className="flex space-x-4 shrink  ">
-                                        
                                         {navigation.map((item) => (
-                                            
                                             <a
                                                 key={item.name}
                                                 href={item.href}
                                                 className={classNames(
                                                     item.current ? 'border-b-2  h-12  border-purple-500 translate-y-2 text-white translate-z-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-800  via-transparent to-transparent' : 'text-gray-300  hover:text-white hover:border-b-2 h-12 translate-y-2 hover:border-purple-500',
-                                                  
+
                                                     ' px-3 py-1 text-md font-medium '
                                                 )}
                                                 aria-current={item.current ? 'page' : undefined}
@@ -201,106 +122,12 @@ function Navigation() {
                                         ))}
                                     </div>
                                 </div>
-                                
                             </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-
-                                {email ? (
-                                    <>
-
-                                        {statusPanel}
-                                    </>
-                                ) : (
-                                    InfoNoLogeado
-                                )}
-
-                                {/* Profile dropdown */}
-                                {email ? (
-                                    <>
-                                        <Menu as="div" className="relative ml-3 flex">
-                                          
-                                                <Menu.Button className="relative flex rounded-full w-8 h-8 text-sm ">
-                                                    <span className="absolute -inset-1.5" />
-                                                    <span className="sr-only">Open user menu</span>
-                                                    {photoURL && (
-                                                        <img src={photoURL} alt="Profile Photo" className="w-8 h-8 rounded-full ring-2 ring-purple-500 ring-offset-2 ring-offset-gray-800" />
-                                                    )}
-                                                </Menu.Button>
-                                            
-                                            <Transition
-                                                as={Fragment}
-                                                enter="transition ease-out duration-100"
-                                                enterFrom="transform opacity-0 scale-95"
-                                                enterTo="transform opacity-100 scale-100"
-                                                leave="transition ease-in duration-75"
-                                                leaveFrom="transform opacity-100 scale-100"
-                                                leaveTo="transform opacity-0 scale-95"
-                                            >
-
-                                                <Menu.Items className="absolute right-0 bg-gray-800 border border-gray-700 z-50 mt-5 w-80 md:w-60 origin-top-right rounded-md  py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <a
-                                                                href="#"
-                                                                className={classNames(active ? 'text-gray-100 ' : '', 'block px-4 pt-2 pointer-events-none text-base lg:text-sm text-gray-300')}
-                                                            >
-                                                                {userName}
-                                                            </a>
-                                                        )}
-                                                    </Menu.Item>
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <a
-                                                                href="#"
-                                                                className={classNames(active ? 'text-gray-100 ' : '', 'block px-4 pb-2 pointer-events-none text-base lg:text-xs text-gray-300')}
-                                                            >
-                                                                {email}
-                                                            </a>
-                                                        )}
-                                                    </Menu.Item>
-
-                                                    <Menu.Item>
-                                                    {memberButton}
-                                                    </Menu.Item>
-
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <a
-                                                                href="/account"
-                                                                className={classNames(active ? 'text-white' : '', 'block px-4 py-2 text-base lg:text-sm text-gray-300')}
-                                                            >
-                                                                My Account
-                                                            </a>
-                                                        )}
-                                                    </Menu.Item>
-
-                                                    <Menu.Item>
-                                                        {({ active }) => (
-                                                            <a
-                                                                onClick={signOut}
-                                                                className={classNames(active ? 'text-white' : '', 'block px-4 py-2  text-base lg:text-sm text-gray-300')}
-                                                                style={{ cursor: 'pointer' }}>
-                                                                Sign out
-                                                            </a>
-                                                        )}
-                                                    </Menu.Item>
-                                                </Menu.Items>
-                                            </Transition>
-                                          
-                                        </Menu>
-                                    </>
-                                ) : (
-                                    ""
-                                )}
-
-<DarkButton/>
+                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                                {Membresia} {BotonUsuario}
                             </div>
-                           
-                            
                         </div>
                     </div>
-
                     <Disclosure.Panel className="sm:hidden">
                         <div className="space-y-1 px-2 pb-3 pt-2">
                             {navigation.map((item) => (
@@ -322,9 +149,6 @@ function Navigation() {
                 </>
             )}
         </Disclosure>
-        </ThemeProvider>
-
-
     )
 }
 
