@@ -1,9 +1,11 @@
+import Link from 'next/link'
 import React from 'react'
+
 
 function BasicButton() {
   return (
     
-     
+    
         <div className="text-center ">
           <a className="flex flex-col  lg:flex-row items-center justify-center text-xl sm:text-xl md:text-xl font-semibold text-slate-400 before:absolute before:inset-0 before:-z-10 before:transition-colors before:duration-500 group" href="#0">
             <span className="relative p-0.5 rounded-full border border-1 border-slate-700  transition duration-500 overflow-hidden flex items-center justify-center before:opacity-0 group-hover:before:opacity-100 before:absolute before:w-1/2 before:pb-[100%] before:bg-[linear-gradient(90deg,_theme(colors.indigo.500/0)_0%,_theme(colors.indigo.500)_35%,_theme(colors.indigo.200)_50%,_theme(colors.indigo.500)_65%,_theme(colors.indigo.500/0)_100%)] before:animate-[spin_3s_linear_infinite]">
@@ -14,7 +16,6 @@ function BasicButton() {
             </span>
           </a>
         </div>
-      
   
 
   )

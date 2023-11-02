@@ -52,6 +52,11 @@ function Userbutton() {
             </div>
         </Menu.Item>
         <Menu.Item>
+            <div className='text-purple-400 hover:text-purple-500'>
+            <a href="/plan" >90 Days Plan</a>
+            </div>
+        </Menu.Item>
+        <Menu.Item>
             <div className='cursor-pointer text-slate-300 hover:text-slate-100'>
             <a onClick={signOut}>Sign out</a>
             </div>

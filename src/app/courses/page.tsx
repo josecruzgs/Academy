@@ -10,6 +10,7 @@ import { StopIcon } from '@heroicons/react/24/solid';
 import BasicButton from '../components/basicbutton';
 import MediumButton from '../components/mediumbutton';
 import AdvancedButton from '../components/advancedbutton';
+import Link from 'next/link';
 
 function courses() {
 
@@ -49,7 +50,7 @@ function courses() {
             <Breadcrumb items={breadcrumbItems} />
           </div>
           <div className="max-w-sm mx-auto grid gap-6 lg:grid-cols-3 items-start lg:max-w-none pt-10">
-          <div><BasicButton/></div>
+          <div> <Link href="/courses/basic"><BasicButton/></Link></div>
           <div><MediumButton/></div>
           <div><AdvancedButton/></div>
           </div>

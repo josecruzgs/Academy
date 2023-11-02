@@ -4,22 +4,23 @@ function Steps() {
     return (
         <section className="antialiased lg:pt-4 relative">
             <div className="py-1 px-4 mx-auto max-w-screen-xl text-center lg:pt-16 ">
-                <div className="flex grid grid-cols-1 md:grid-cols-2 gap-4 sm:flex-row flex-col">
+                <div className=" grid grid-cols-1 md:grid-cols-2 gap-4 sm:flex-row flex-col">
                     <div className="md:col-span-1 col-span-2 order-last md:order-first">
                         <div className="mb-4 border rounded-xl glass-box  py-8 px-10 mx-10 container1 ">
-                            Follow us on Instagram, Twitter, and join our Telegram where you will be given an access code.
+                        If you are already part of Mavie, log in with your username and password.
+
                             <div className="circle1 text-center flex justify-center items-center">
                                 <p className="inline-block text-center font-bold text-2xl">1</p>
                             </div>
                         </div>
                         <div className="mb-4 border rounded-xl glass-box py-8 px-10 mx-10 container1 ">
-                            Go to the telegram channel and get the access code.
+                        Don't have an account? Click on "New member" to create an account and allow our team to contact you.
                             <div className="circle1 text-center flex justify-center items-center">
                                 <p className="inline-block text-center font-bold text-2xl">2</p>
                             </div>
                         </div>
                         <div className="mb-4 border rounded-xl glass-box  py-8 px-10 mx-10 container1 ">
-                            Click on the register button to enter your access code and fill in your personal information.
+                        Select the type of account you want to start your learning experience with. Done!
                             <div className="circle1 text-center flex justify-center items-center">
                                 <p className="inline-block text-center font-bold text-2xl">3</p>
                             </div>

@@ -70,7 +70,7 @@ function classNames(...classes: string[]) {
     );
 
     
-    const isMobile = window.innerWidth < 768;
+    const isMobile = window.innerWidth < 568;
     const BotonUsuario = email ? <Userbutton /> : AcademyAccess;
     const Membresia = email ? <Usertype /> : "";
 
@@ -104,7 +104,7 @@ function classNames(...classes: string[]) {
                                         />
                                     </a>
                                 </div>
-                                <div className="hidden sm:block  items-stretch flex items-center my-auto mx-auto ">
+                                <div className="hidden sm:block items-center my-auto mx-auto ">
                                     <div className="flex space-x-4 shrink  ">
                                         {navigation.map((item) => (
                                             <a

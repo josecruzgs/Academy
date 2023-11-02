@@ -125,7 +125,7 @@ export default function AccountPage() {
             <div className="flex flex-col sm:flex-row gap-4">
 
               <div className="w-full md:w-1/3 ">
-                <div id="left" className="h-full bg-dots-top mx-auto my-auto  py-8 items-center my-auto text-center border border-slate-800 shadow-xl bg-gray-900 rounded-lg">
+                <div id="left" className="h-full bg-dots-top mx-auto my-auto  py-8 items-center  text-center border border-slate-800 shadow-xl bg-gray-900 rounded-lg">
                   <div className="justify-center items-center mx-auto flex w-24 h-24 ">
                    <Profilepic/>
                   </div>
@@ -151,19 +151,19 @@ export default function AccountPage() {
 
                 <div className="md:flex mb-4 gap-x-4 gap-y-4">
 
-                  <div id="col1" className="basis-1/2 flex rounded-lg flex mb-4 border border-slate-800 shadow-xl md:mb-0 items-center md:basis-1/4 p-4 bg-gray-900 ">
+                  <div id="col1" className="basis-1/2 flex rounded-lg  mb-4 border border-slate-800 shadow-xl md:mb-0 items-center md:basis-1/4 p-4 bg-gray-900 ">
                     <FaBookReader className="h-10 w-10 mx-auto text-purple-500" />
                     <div className="text-right mx-auto">
                       <p className="mb-2 text-sm  font-medium text-gray-400">Courses taken</p>
-                      <p className="text-lg font-semibold  text-xl text-purple-500">12</p>
+                      <p className="text-lg font-semibold   text-purple-500">12<span className="text-xs pl-2">Courses</span></p>
                     </div>
                   </div>
 
                   <div id="col3" className="basis-1/2 dlex rounded-lg flex mb-4 md:mb-0 shadow-xl border border-slate-800 items-center md:basis-1/4 p-4 bg-gray-900 ">
                     <GiReceiveMoney className="h-10 w-10 mx-auto text-green-500" />
                     <div className="text-right mx-auto">
-                      <p className="mb-2 text-sm  font-medium text-gray-400">VKRs Owned</p>
-                      <p className="text-lg font-semibold  text-xl text-green-500">2256<span className="text-xs pl-2">VRK</span></p>
+                      <p className="mb-2 text-sm  font-medium text-gray-400">Points Owned</p>
+                      <p className="text-lg font-semibold   text-green-500">2256<span className="text-xs pl-2">Points</span></p>
                     </div>
                   </div>
 
@@ -171,7 +171,7 @@ export default function AccountPage() {
                     <BsBookmarkCheckFill className="h-10 w-10 mx-auto text-orange-400" />
                     <div className="text-right mx-auto">
                       <p className="mb-2 text-sm  font-medium text-gray-400">Education topics with best performance</p>
-                      <p className="text-lg font-semibold  text-xl text-gray-200">Blockchain / NFTs</p>
+                      <p className="text-lg font-semibold   text-gray-200">Blockchain / NFTs</p>
                     </div>
                   </div>
 
