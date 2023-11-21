@@ -20,7 +20,7 @@ function Challenges() {
             <Breadcrumb items={breadcrumbItems} />
           </div>
 
-          <div className='my-40'>
+          <div className='my-40 p-2'>
           <h1 className="text-5xl md:text-5xl font-bold mb-5 text-gray-300">Working on...Come back soon!</h1>
           </div>
 
