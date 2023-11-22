@@ -34,7 +34,7 @@ const sections: Section[] = [
                                 Let's explore this fascinating technology, which is changing the way we handle transactions and records in the digital world.
                             </p>
                         </div>
-                        <Slide direction="up" triggerOnce delay={600}>
+                        <Slide direction="up" triggerOnce delay={700}>
                         <div className='px-10 py-6 '>
                             <VideoWelcome
                                 thumb={VideoThumb}
@@ -282,10 +282,20 @@ const CoursesV2: React.FC = () => {
 
     const handleNext = () => {
         setCurrentSection((prev) => Math.min(prev + 1, totalSections - 1));
+        scrollToTop();
     };
 
     const handlePrev = () => {
         setCurrentSection((prev) => Math.max(prev - 1, 0));
+        scrollToTop();
+    };
+
+    const scrollToTop = () => {
+        // Desplazarse hacia la parte superior de la página
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth', // Puedes ajustar esto según tus preferencias
+        });
     };
 
     const breadcrumbItems = [
