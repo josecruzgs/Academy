@@ -11,7 +11,7 @@ const EvaluationModal: FunctionComponent<EvaluationModalProps> = ({ onClose }) =
     <div className="fixed inset-0 flex items-center justify-center z-10 bg-black mt-10 bg-opacity-70">
       <div className="modal-container bg-gray-800 w-11/12 md:w-6/12 mx-auto p-4 rounded-xl shadow-lg text-center">
         <h2 className="text-xl font-semibold mb-4">Evaluation Instructions</h2>
-        <p className="text-gray-300 mb-4">
+        <p className="text-gray-300n mb-4">
           Instructions: Read the question, analyze it, and select the answer that you consider correct. Then press "Next" to advance to the next question.
         </p>
 

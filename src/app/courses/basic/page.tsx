@@ -49,6 +49,53 @@ function Basic() {
 
           <div className=" py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
       <div className="grid gap-5 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
+
+      <div className="overflow-hidden transition-shadow duration-300 bg-gray-900 rounded-xl">
+          <a href="/courses/basic/blockchain" aria-label="Article">
+            <img
+              src="/images/courses/blockchain.jpg"
+              className="object-cover w-full h-64 rounded"
+              alt=""
+            />
+          </a>
+          <div className="p-5">
+            <p className="mb-2 text-xs font-semibold text-purple-400 uppercase">
+              Blockchain
+            </p>
+            <a
+              href="/courses/basic/blockchain"
+              aria-label="Class"
+              className="inline-block mb-3 text-gray-200 transition-colors duration-200 hover:text-deep-purple-accent-700"
+            >
+              <p className="text-2xl font-bold leading-5">What is Blockchain?</p>
+            </a>
+            <p className="mb-4 text-gray-400">
+            The student will be able to recognize the fundamental concepts of the blocchain and apply these program concepts.
+            </p>
+            <div className="flex space-x-4">
+              <a
+                href=""
+                aria-label="Likes"
+                className="flex items-center text-gray-300 transition-colors duration-200 hover:text-deep-purple-accent-700 group"
+              >
+                <div className="mr-2">
+                  <AiOutlineLike/>
+                </div>
+                <p className="font-semibold">7.4K</p>
+              </a>
+              <a
+                href=""
+                aria-label="Comments"
+                className="flex items-center text-gray-300 transition-colors duration-200 hover:text-deep-purple-accent-700 group"
+              >
+                <div className="mr-2">
+                <AiOutlineComment/>
+                </div>
+                <p className="font-semibold">81</p>
+              </a>
+            </div>
+          </div>
+        </div>
         
         <div className="overflow-hidden transition-shadow duration-300 bg-gray-900 rounded-xl">
           <a href="/courses/basic/class" aria-label="Article">
@@ -96,6 +143,8 @@ function Basic() {
             </div>
           </div>
         </div>
+
+        
        
       </div>
     </div>
